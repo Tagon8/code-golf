@@ -1,14 +1,15 @@
 # Code golf
 
 Problems:
-    * [Roman to decimal](http://codegolf.com/roman-to-decimal)
 
-    * [Polunomial Division](http://codegolf.com/polynomial-division)
+[Roman to decimal](http://codegolf.com/roman-to-decimal)
 
-    * [Reverse](http://codegolf.com/reverse)
+[Polunomial Division](http://codegolf.com/polynomial-division)
 
-    * [Conway's Game of Life](http://codegolf.com/conways-game-of-life)
+[Reverse](http://codegolf.com/reverse)
 
-    * [Paint by Numbers](http://codegolf.com/paint-by-numbers)
+[Conway's Game of Life](http://codegolf.com/conways-game-of-life)
 
-    * [99 bottles of beer](http://codegolf.com/99-bottles-of-beer)
+[Paint by Numbers](http://codegolf.com/paint-by-numbers)
+
+[99 bottles of beer](http://codegolf.com/99-bottles-of-beer)
