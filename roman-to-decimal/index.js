@@ -37,10 +37,12 @@
             }
         }
 
-        if ( expression.search(/^([LX][X]{1,})+(I[V|X])$/) > -1 ) out -= 2;
+        if ( expression.search(/^([LCX][XL]{1,})+(I[V|X])$/) > -1 ) out -= 2;
         if ( expression.search(/^[XLCDM]IV$/) > -1 ) out -= 2;
         if ( expression.search(/^[XLCDM]IX$/) > -1 ) out += 18;
         if ( expression.search(/^[LCDMX]X/) > -1 ) out += 20;
+        if ( expression.search(/^[C][L]/) > -1 ) out += 100;
+        if ( expression.search(/^[C]{2,}/) > -1 ) out += 200;
 
         return out;
     };
