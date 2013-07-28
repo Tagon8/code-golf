@@ -43,6 +43,7 @@
         if ( expression.search(/^[LCDMX]X/) > -1 ) out += 20;
         if ( expression.search(/^[C][L]/) > -1 ) out += token['C'];
         if ( expression.search(/^[C]{2,}/) > -1 ) out += token['C'] * 2;
+        if ( expression.search(/^[C]{4,}/) > -1 ) out += token['C'] * 2;
 
         return out;
     };
