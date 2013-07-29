@@ -37,12 +37,19 @@
             }
         }
 
-        if ( expression.search(/^([LCX][CXL]{1,})+(I[V|X])$/) > -1 ) out -= 2;
+        if ( expression.search(/^([XLCDM][XLCDM]{1,})+(I[V|X])$/) > -1 ) out -= 2;
         if ( expression.search(/^[XLCDM]IV$/) > -1 ) out -= 2;
         if ( expression.search(/^[XLCDM]IX$/) > -1 ) out += 18;
-        if ( expression.search(/^[LCDMX]X/) > -1 ) out += 20;
-        if ( expression.search(/^[C][L]/) > -1 ) out += token['C'];
-        if ( expression.search(/^[C]{2,}/) > -1 ) out += token['C'] * 2;
+        if ( expression.search(/^[LCDMX][X]/) > -1 ) out += 20;
+        if ( expression.search(/^[LCDMX]XL/) > -1 ) out += 60;
+        if ( expression.search(/^[LCDMX]XL|XL/) > -1 ) out += 20;
+        if ( expression.search(/^([C][L])XL/) > -1 ) out += 100;
+        if ( expression.search(/^[C]{1,3}/) )
+        if ( 
+            expression.search(/^([CD]{2,})|([L]{1,})?(XL)|([LC]XL)/) > -1 
+        ) out -= 20;
+        if ( expression.search(/^[CD][L]/) > -1 ) out += token['C'];
+        if ( expression.search(/^[DC]{2,}/) > -1 ) out += token['C'] * 2;
         if ( expression.search(/^[C]{4,}/) > -1 ) out += token['C'] * 2;
 
         return out;
