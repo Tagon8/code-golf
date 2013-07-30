@@ -329,7 +329,12 @@ suite('Roman to decimal', function () {
             'DCXLIV': 644, 'DCXLV': 645,
             'DCXLVI': 646, 'DCXLVII': 647,
             'DCXLVIII': 648, 'DCXLIX': 649,
-            'DCL': 650
+            'DCL': 650, 'DCLI': 651,
+            'DCLII': 652, 'DCLIII': 653,
+            'DCLIV': 654, 'DCLV': 655,
+            'DCLVI': 656, 'DLCVII': 657,
+            'DLCVIII': 658, 'DLCIX': 659,
+            'DLCX': 660, 'DLCXI': 661
         };
 
         test('expressions', function () {
@@ -344,6 +349,50 @@ suite('Roman to decimal', function () {
                 assert.equal(
                     roman.to.decimal( k ),
                     tokens[ k ]
+                );
+            }
+        });
+    });
+
+    suite('valid', function () {
+        var validTokens = roman.tokens,
+            invalidTokens = [
+                'A', 'IA',
+                'IZ', 'XCZ',
+                '$%%^^'
+            ];
+
+        test('valid token', function () {
+            for ( var i in validTokens ) {
+                assert.ok( validTokens[ i ] );
+            }
+        });
+
+        test('invalid token', function () {
+            for ( var i in invalidTokens ) {
+                assert.equal(
+                    roman.valid.token( invalidTokens[ i ] ),
+                    false
+                );
+            }
+        });
+    });
+
+    suite('infers', function () {
+        test('match', function () {
+            var values = {
+                'IV': 2,
+                'IX': 2,
+                'XL': 20,
+                'XC': 20,
+                'CD': 200,
+                'CM': 200
+            };
+
+            for ( var k in values ) {
+                assert.equal(
+                    roman.infers.match( k ),
+                    values[ k ]
                 );
             }
         });
