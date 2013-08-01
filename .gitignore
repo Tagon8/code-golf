@@ -1,1 +1,3 @@
 roman-to-decimal/*.sw*
+roman-to-decimal/python/*.pyc
+roman-to-decimal/python/*.pyo
