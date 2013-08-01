@@ -19,12 +19,20 @@ func hasValue ( expression string, value string ) bool {
 func match ( value string ) int {
     out := 0
 
-    if hasValue( value, "IV" ) || hasValue( value, "IX" ) {
-        out = 2
-    } else if hasValue( value, "XL" ) || hasValue( value, "XC" ) {
-        out = 20
-    } else if hasValue( value, "CD" ) || hasValue( value, "CM" ) {
-        out = 200
+    tokens := map [ string ] int {
+        "IX": 2,
+        "IV": 2,
+        "XL": 20,
+        "XC": 20,
+        "CD": 200,
+        "CM": 200,
+    }
+
+    for k, v := range tokens {
+        if hasValue( value, k ) {
+            out = v
+            break
+        }
     }
 
     return out
